@@ -15,17 +15,17 @@
         <div class="todo">3. Dars tayyorlash</div>
     </div>
     
-
-
     <script>
         let todos = document.getElementById("todos");
-        let todoTextInput = document.getElementById("todo-text")
-        let new_todo = document.createElement("div");
-        let btn = document.getElementById("add-button")
+        let todoTextInput = document.getElementById("todo-text");
+        let btn = document.getElementById("add-button");
 
-        btn.onclick = () =>{
-            new_todo.textContent = `${todos.childElementCount + 1}. ${todoTextInput.value}`
-            todos.append(new_todo)
+        btn.onclick = () => {
+            let new_todo = document.createElement("div");
+            new_todo.className = "todo";
+            new_todo.textContent = `${todos.childElementCount + 1}. ${todoTextInput.value}`;
+            todos.append(new_todo);
+            todoTextInput.value = "";
         }
     </script>
 </body>
