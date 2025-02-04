@@ -1,32 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalkulyator</title>
 </head>
-<body>
-    <input type="text" id="todo-text">
-    <button id="add-button">Qo'shish</button>
-    <hr>
-    <div id="todos">
-        <!-- <div class="todo">1. Vaqtliroq uyg'onish</div> -->
-        <!-- <div class="todo">2. Nonushta qilish</div> -->
-        <!-- <div class="todo">3. Dars tayyorlash</div> -->
-    </div>
-    
-    <script>
-        let todos = document.getElementById("todos");
-        let todoTextInput = document.getElementById("todo-text");
-        let btn = document.getElementById("add-button");
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        color: white;
+    }
 
-        btn.onclick = () => {
-            let new_todo = document.createElement("div");
-            new_todo.className = "todo";
-            new_todo.textContent = `${todos.childElementCount + 1}. ${todoTextInput.value} = ${eval(todoTextInput.value)}`;
-            todos.append(new_todo);
-            todoTextInput.value = "";
-        }
+    table {
+        border: 2px solid black;
+        inline-size: 580px;
+        block-size: 600px;
+    }
+
+    .big-td {
+        border: 4px solid black;
+        block-size: 70px;
+        border-radius: 8px;
+    }
+
+    #todo-input {
+        inline-size: 443px;
+        block-size: 100px;
+        border: none;
+        font-size: 56px;
+        text-align: end;
+    }
+
+    .todo {
+        background-color: green;
+        text-align: center;
+        inline-size: 150px;
+        block-size: 100px;
+        border-radius: 8px;
+    }
+
+    .todo-punct {
+        background-color: green;
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        inline-size: 110px;
+        block-size: 115px;
+    }
+</style>
+
+<body>
+    <table id="todos">
+        <tr>
+            <td colspan="3" class="big-td"><input id="todo-input"></td>
+            <td class="todo-punct" id="c">C</td>
+        </tr>
+        <tr>
+            <td class="todo" id="1">1</td>
+            <td class="todo" id="2">2</td>
+            <td class="todo" id="3">3</td>
+            <td class="todo-punct" id="bol">/</td>
+        </tr>
+        <tr>
+            <td class="todo" id="4">4</td>
+            <td class="todo" id="5">5</td>
+            <td class="todo" id="6">6</td>
+            <td class="todo-punct" id="kop">*</td>
+        </tr>
+        <tr>
+            <td class="todo" id="7">7</td>
+            <td class="todo" id="8">8</td>
+            <td class="todo" id="9">9</td>
+            <td class="todo-punct" id="minus">-</td>
+        </tr>
+        <tr>
+            <td class="todo" id="0">0</td>
+            <td class="todo" id="nuqta">.</td>
+            <td class="todo" id="teng">=</td>
+            <td class="todo-punct" id="plus">+</td>
+        </tr>
+    </table>
+    <script>
+        let todoTextInput = document.getElementById("todo-input");
+        let btn1 = document.getElementById("1");
+        let btn2 = document.getElementById("2");
+        let btn3 = document.getElementById("3");
+        let btn4 = document.getElementById("4");
+        let btn5 = document.getElementById("5");
+        let btn6 = document.getElementById("6");
+        let btn7 = document.getElementById("7");
+        let btn8 = document.getElementById("8");
+        let btn9 = document.getElementById("9");
+        let btn0 = document.getElementById("0");
+        let btnc = document.getElementById("c");
+        let btnslash = document.getElementById("bol");
+        let btnkop = document.getElementById("kop");
+        let btnminus = document.getElementById("minus");
+        let btnplus = document.getElementById("plus");
+        let btnteng = document.getElementById("teng");
+        let btnnuq = document.getElementById("nuqta");
+
+        btn1.onclick = () => {
+            todoTextInput.value += '1';
+        };
+        btn2.onclick = () => {
+            todoTextInput.value += '2';
+        };
+        btn3.onclick = () => {
+            todoTextInput.value += '3';
+        };
+        btn4.onclick = () => {
+            todoTextInput.value += '4';
+        };
+        btn5.onclick = () => {
+            todoTextInput.value += '5';
+        };
+        btn6.onclick = () => {
+            todoTextInput.value += '6';
+        };
+        btn7.onclick = () => {
+            todoTextInput.value += '7';
+        };
+        btn8.onclick = () => {
+            todoTextInput.value += '8';
+        };
+        btn9.onclick = () => {
+            todoTextInput.value += '9';
+        };
+        btn0.onclick = () => {
+            todoTextInput.value += '0';
+        };
+        btnc.onclick = () => {
+            todoTextInput.value = '';
+        };
+        btnslash.onclick = () => {
+            todoTextInput.value += '/';
+        };
+        btnkop.onclick = () => {
+            todoTextInput.value += '*';
+        };
+        btnminus.onclick = () => {
+            todoTextInput.value += '-';
+        };
+        btnplus.onclick = () => {
+            todoTextInput.value += '+';
+        };
+        btnteng.onclick = () => {
+            todoTextInput.value = eval(todoTextInput.value);
+        };
+        btnnuq.onclick = () => {
+            todoTextInput.value += '.';
+        };
     </script>
 </body>
+
 </html>
