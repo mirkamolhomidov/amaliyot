@@ -10,9 +10,9 @@
     <button id="add-button">Qo'shish</button>
     <hr>
     <div id="todos">
-        <div class="todo">1. Vaqtliroq uyg'onish</div>
-        <div class="todo">2. Nonushta qilish</div>
-        <div class="todo">3. Dars tayyorlash</div>
+        <!-- <div class="todo">1. Vaqtliroq uyg'onish</div> -->
+        <!-- <div class="todo">2. Nonushta qilish</div> -->
+        <!-- <div class="todo">3. Dars tayyorlash</div> -->
     </div>
     
     <script>
@@ -23,7 +23,7 @@
         btn.onclick = () => {
             let new_todo = document.createElement("div");
             new_todo.className = "todo";
-            new_todo.textContent = `${todos.childElementCount + 1}. ${todoTextInput.value}`;
+            new_todo.textContent = `${todos.childElementCount + 1}. ${todoTextInput.value} = ${eval(todoTextInput.value)}`;
             todos.append(new_todo);
             todoTextInput.value = "";
         }
